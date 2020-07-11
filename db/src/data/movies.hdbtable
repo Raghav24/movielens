@@ -1,4 +1,4 @@
-COLUMN TABLE "movielens.db.data:movies"(
+COLUMN TABLE "mmovies"(
     "MOVIEID" INTEGER CS_INT NOT NULL,
     "TITLE"   VARCHAR(255),
     "GENRES"  VARCHAR(255),
