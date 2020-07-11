@@ -21,6 +21,13 @@ modules:
    requires:
     - name: movielens_html5_repo_host
 
+
+ - name: db
+   type: hdb
+   path: db
+   requires:
+    - name: hdi_db
+
 resources:
  - name: movielens_html5_repo_runtime
    parameters:
@@ -33,4 +40,13 @@ resources:
       service-plan: app-host
       service: html5-apps-repo
    type: org.cloudfoundry.managed-service
+
+
+ - name: hdi_db
+   parameters:
+      config:
+         schema: ml
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
 
